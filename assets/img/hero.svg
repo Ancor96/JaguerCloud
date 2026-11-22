@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Servidores locales conectados a la nube">
+  <circle cx="240" cy="180" r="160" fill="#4285f4" opacity="0.12"/>
+  <path d="M150 195a50 50 0 0 1-5-100 70 70 0 0 1 133-16 60 60 0 0 1 10 116z" fill="#4285f4"/>
+  <path d="M205 195l35-44 35 44z" fill="#fbbc04"/>
+  <rect x="40" y="262" width="84" height="56" rx="10" fill="#ea4335"/>
+  <rect x="198" y="278" width="84" height="40" rx="10" fill="#fbbc04"/>
+  <rect x="356" y="262" width="84" height="56" rx="10" fill="#34a853"/>
+  <circle cx="58" cy="280" r="4" fill="#ffffff"/>
+  <circle cx="374" cy="280" r="4" fill="#ffffff"/>
+  <circle cx="216" cy="294" r="4" fill="#202124"/>
+  <path d="M100 258l70-56M380 258l-70-56M240 274v-70" stroke="#174ea6" stroke-width="4" stroke-dasharray="8 8" fill="none"/>
+</svg>

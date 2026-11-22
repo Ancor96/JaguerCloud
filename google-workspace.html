@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Implantamos Google Workspace: Gmail, Drive, Meet y Calendar, con migración de correos y archivos sin cortes.">
+    <title>Google Workspace | Jäger Cloud</title>
+    <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+  </head>
+  <body class="pagina">
+    <header>
+      <nav class="navbar navbar-expand-lg menu-principal" aria-label="Principal">
+        <div class="container">
+          <a class="navbar-brand logo-marca" href="index.html">
+            <img src="assets/img/logo.svg" alt="" width="36" height="36">
+            Jäger Cloud
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-navegacion" aria-controls="menu-navegacion" aria-expanded="false" aria-label="Abrir menú">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="menu-navegacion">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+              <li class="nav-item"><a class="nav-link enlace-menu" href="index.html">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link enlace-menu" href="migracion-cloud.html">Migración cloud</a></li>
+              <li class="nav-item"><a class="nav-link enlace-menu" href="google-workspace.html" aria-current="page">Google Workspace</a></li>
+              <li class="nav-item"><a class="nav-link enlace-menu" href="index.html#planes">Planes</a></li>
+              <li class="nav-item"><a class="btn boton-principal" href="index.html#contacto">Contacto</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-portada borde-nube" id="inicio">
+        <div class="hero-texto">
+          <h1>Google Workspace para tu empresa, sin perder un solo correo</h1>
+          <p class="hero-subtitulo">Configuramos Gmail corporativo, Drive, Meet y Calendar, migramos tus correos y archivos antiguos sin cortes y formamos a tu equipo desde el primer día.</p>
+          <div class="hero-botones">
+            <a class="btn boton-principal" href="mailto:hola@jagercloud.example?subject=Consulta%20sobre%20Google%20Workspace">Hablar con nosotros</a>
+            <a class="btn boton-secundario" href="#herramientas">Ver herramientas</a>
+          </div>
+        </div>
+        <img class="hero-imagen" src="assets/img/workspace.svg" alt="Correo, calendario, archivos y videollamadas conectados a la nube" width="480" height="360">
+      </section>
+
+      <section class="seccion" id="herramientas">
+        <div class="container">
+          <h2 class="titulo-seccion">Herramientas que instalamos</h2>
+          <div class="row g-4 justify-content-center fila-servicios">
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card tarjeta-servicio">
+                <i class="bi bi-envelope-at icono-servicio" aria-hidden="true"></i>
+                <h3 class="h5">Gmail corporativo</h3>
+                <p>Correo con el dominio de tu empresa, un buzón por persona y listas de distribución.</p>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card tarjeta-servicio">
+                <i class="bi bi-folder2-open icono-servicio" aria-hidden="true"></i>
+                <h3 class="h5">Drive</h3>
+                <p>Archivos compartidos con permisos por equipo y acceso desde cualquier dispositivo.</p>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card tarjeta-servicio">
+                <i class="bi bi-camera-video icono-servicio" aria-hidden="true"></i>
+                <h3 class="h5">Meet</h3>
+                <p>Videollamadas con tu equipo y con clientes, sin instalar nada.</p>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card tarjeta-servicio">
+                <i class="bi bi-calendar-event icono-servicio" aria-hidden="true"></i>
+                <h3 class="h5">Calendar</h3>
+                <p>Calendarios compartidos, salas de reuniones y citas coordinadas.</p>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card tarjeta-servicio">
+                <i class="bi bi-file-earmark-text icono-servicio" aria-hidden="true"></i>
+                <h3 class="h5">Docs, Sheets y Slides</h3>
+                <p>Documentos, hojas de cálculo y presentaciones que se editan en equipo y en tiempo real.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion seccion-alterna borde-nube" id="migracion-correo">
+        <div class="container">
+          <h2 class="titulo-seccion">Migración de correo y archivos</h2>
+          <ol class="lista-proceso">
+            <li class="paso-proceso">
+              <div>
+                <h3 class="h5">Revisión</h3>
+                <p>Revisamos tus cuentas, buzones y carpetas actuales.</p>
+              </div>
+            </li>
+            <li class="paso-proceso">
+              <div>
+                <h3 class="h5">Preparación</h3>
+                <p>Configuramos tu dominio, los usuarios y los permisos de cada equipo.</p>
+              </div>
+            </li>
+            <li class="paso-proceso">
+              <div>
+                <h3 class="h5">Traslado</h3>
+                <p>Pasamos correos, contactos y archivos fuera del horario de oficina.</p>
+              </div>
+            </li>
+            <li class="paso-proceso">
+              <div>
+                <h3 class="h5">Comprobación</h3>
+                <p>Verificamos que todo está en su sitio y activamos las cuentas nuevas.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="seccion" id="seguridad">
+        <div class="container">
+          <h2 class="titulo-seccion">Seguridad y formación</h2>
+          <ul class="rejilla-beneficios">
+            <li class="beneficio">
+              <i class="bi bi-shield-lock icono-beneficio" aria-hidden="true"></i>
+              <h3 class="h5">Verificación en dos pasos</h3>
+              <p>Protegemos cada cuenta para que una contraseña robada no sea suficiente.</p>
+            </li>
+            <li class="beneficio">
+              <i class="bi bi-people icono-beneficio" aria-hidden="true"></i>
+              <h3 class="h5">Permisos por equipo</h3>
+              <p>Cada persona ve solo los archivos y calendarios que necesita.</p>
+            </li>
+            <li class="beneficio">
+              <i class="bi bi-mortarboard icono-beneficio" aria-hidden="true"></i>
+              <h3 class="h5">Formación para tu equipo</h3>
+              <p>Sesiones cortas con las herramientas que usarán cada día.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="seccion seccion-alterna borde-nube" id="faq">
+        <div class="container">
+          <h2 class="titulo-seccion">Preguntas frecuentes</h2>
+          <div class="accordion acordeon-faq" id="faq-workspace">
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-1" aria-expanded="false" aria-controls="faq-1">¿Perderé mis correos antiguos?</button>
+              </h3>
+              <div class="accordion-collapse collapse" id="faq-1" data-bs-parent="#faq-workspace">
+                <div class="accordion-body">No. Migramos buzones, carpetas y contactos, y comprobamos que todo está en su sitio antes de hacer el cambio.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-2" aria-expanded="false" aria-controls="faq-2">¿Mi equipo tendrá que parar de trabajar?</button>
+              </h3>
+              <div class="accordion-collapse collapse" id="faq-2" data-bs-parent="#faq-workspace">
+                <div class="accordion-body">No. Hacemos el traslado fuera del horario de oficina para que el lunes todo funcione.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-3" aria-expanded="false" aria-controls="faq-3">¿Seguiré usando el correo de mi empresa?</button>
+              </h3>
+              <div class="accordion-collapse collapse" id="faq-3" data-bs-parent="#faq-workspace">
+                <div class="accordion-body">Sí. Gmail usa el dominio de tu empresa, así que tus direcciones no cambian.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-4" aria-expanded="false" aria-controls="faq-4">¿Hace falta formación?</button>
+              </h3>
+              <div class="accordion-collapse collapse" id="faq-4" data-bs-parent="#faq-workspace">
+                <div class="accordion-body">Es opcional, pero la recomendamos: unas sesiones cortas ahorran muchas dudas las primeras semanas.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="banda-contacto">
+        <div class="container">
+          <h2>¿Quieres pasar tu empresa a Google Workspace?</h2>
+          <p>Cuéntanos cuántas personas sois y qué usáis hoy, y te respondemos en menos de 24 horas.</p>
+          <a class="btn boton-principal" href="mailto:hola@jagercloud.example?subject=Consulta%20sobre%20Google%20Workspace">Escribir a Jäger Cloud</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pie-pagina">
+      <div class="container pie-columnas">
+        <div>
+          <h2 class="h6">Jäger Cloud S.L.</h2>
+          <p>Migraciones a Google Cloud, AWS y Google Workspace para empresas.</p>
+        </div>
+        <div>
+          <h2 class="h6">Dirección</h2>
+          <address>Calle Sierpes 25<br>41004 Sevilla</address>
+        </div>
+        <div>
+          <h2 class="h6">Contacto</h2>
+          <p><a href="mailto:hola@jagercloud.example">hola@jagercloud.example</a></p>
+          <p><a href="tel:+34955000000">+34 955 000 000</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

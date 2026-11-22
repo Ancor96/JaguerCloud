@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Migramos servidores, bases de datos y aplicaciones a Google Cloud y AWS sin pérdida de datos.">
+    <title>Migración a la nube | Jäger Cloud</title>
+    <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+  </head>
+  <body class="pagina">
+    <header>
+      <nav class="navbar navbar-expand-lg menu-principal" aria-label="Principal">
+        <div class="container">
+          <a class="navbar-brand logo-marca" href="index.html">
+            <img src="assets/img/logo.svg" alt="" width="36" height="36">
+            Jäger Cloud
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-navegacion" aria-controls="menu-navegacion" aria-expanded="false" aria-label="Abrir menú">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="menu-navegacion">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+              <li class="nav-item"><a class="nav-link enlace-menu" href="index.html">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link enlace-menu" href="migracion-cloud.html" aria-current="page">Migración cloud</a></li>
+              <li class="nav-item"><a class="nav-link enlace-menu" href="google-workspace.html">Google Workspace</a></li>
+              <li class="nav-item"><a class="nav-link enlace-menu" href="index.html#planes">Planes</a></li>
+              <li class="nav-item"><a class="btn boton-principal" href="index.html#contacto">Contacto</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-portada borde-nube" id="inicio">
+        <div class="hero-texto">
+          <h1>Migración a la nube sin perder datos ni frenar tu negocio</h1>
+          <p class="hero-subtitulo">Trasladamos tus servidores, bases de datos y aplicaciones locales a Google Cloud y AWS con un plan cerrado, copia de seguridad antes de cada paso y pruebas de rendimiento.</p>
+          <div class="hero-botones">
+            <a class="btn boton-principal" href="mailto:hola@jagercloud.example?subject=Auditor%C3%ADa%20gratuita%20de%20migraci%C3%B3n%20a%20la%20nube">Solicitar auditoría gratuita</a>
+            <a class="btn boton-secundario" href="#metodo">Ver cómo lo hacemos</a>
+          </div>
+        </div>
+        <img class="hero-imagen" src="assets/img/hero.svg" alt="Servidores locales conectados a la nube" width="480" height="360">
+      </section>
+
+      <section class="seccion" id="que-migramos">
+        <div class="container">
+          <h2 class="titulo-seccion">Qué migramos</h2>
+          <div class="row g-4 justify-content-center fila-servicios">
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card tarjeta-servicio">
+                <i class="bi bi-hdd-rack icono-servicio" aria-hidden="true"></i>
+                <h3 class="h5">Servidores</h3>
+                <p>Máquinas físicas y virtuales con su sistema y su configuración, listas para funcionar en la nube.</p>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card tarjeta-servicio">
+                <i class="bi bi-database icono-servicio" aria-hidden="true"></i>
+                <h3 class="h5">Bases de datos</h3>
+                <p>Tus bases de datos pasan con todos sus datos y comprobamos que coinciden antes de hacer el cambio.</p>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card tarjeta-servicio">
+                <i class="bi bi-window-stack icono-servicio" aria-hidden="true"></i>
+                <h3 class="h5">Aplicaciones</h3>
+                <p>Aplicaciones internas y webs corporativas, adaptadas para rendir bien en su nueva infraestructura.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion seccion-alterna borde-nube" id="plataformas">
+        <div class="container">
+          <h2 class="titulo-seccion">Google Cloud o AWS: elegimos contigo</h2>
+          <div class="row g-4">
+            <div class="col-12 col-md-6">
+              <article class="card tarjeta-servicio">
+                <h3 class="h4">Google Cloud</h3>
+                <p>Buena opción si tu empresa ya usa Google Workspace, porque se integra con tus cuentas y herramientas.</p>
+                <ul class="lista-incluye">
+                  <li>Integración directa con Google Workspace</li>
+                  <li>Servicios de datos y analítica</li>
+                  <li>Pagas solo por lo que consumes</li>
+                </ul>
+              </article>
+            </div>
+            <div class="col-12 col-md-6">
+              <article class="card tarjeta-servicio">
+                <h3 class="h4">AWS</h3>
+                <p>Buena opción si necesitas una gama muy amplia de servicios o ya tienes aplicaciones en Amazon.</p>
+                <ul class="lista-incluye">
+                  <li>Catálogo muy amplio de servicios</li>
+                  <li>Presencia en muchas regiones del mundo</li>
+                  <li>Pagas solo por lo que consumes</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+          <p class="nota-seccion">Si lo necesitas, combinamos las dos plataformas con una arquitectura multicloud (incluida en el Plan Empresa).</p>
+        </div>
+      </section>
+
+      <section class="seccion" id="metodo">
+        <div class="container">
+          <h2 class="titulo-seccion">Cómo migramos</h2>
+          <ol class="lista-proceso">
+            <li class="paso-proceso">
+              <div>
+                <h3 class="h5">Inventario</h3>
+                <p>Listamos tus servidores, bases de datos, aplicaciones y las dependencias entre ellos.</p>
+              </div>
+            </li>
+            <li class="paso-proceso">
+              <div>
+                <h3 class="h5">Estrategia</h3>
+                <p>Decidimos qué se traslada tal cual y qué conviene adaptar para aprovechar la nube.</p>
+              </div>
+            </li>
+            <li class="paso-proceso">
+              <div>
+                <h3 class="h5">Traslado con pruebas</h3>
+                <p>Movemos por fases, con copia de seguridad previa y pruebas de rendimiento en cada una.</p>
+              </div>
+            </li>
+            <li class="paso-proceso">
+              <div>
+                <h3 class="h5">Puesta en marcha</h3>
+                <p>Cambiamos el tráfico a la nube y mantenemos el sistema antiguo hasta confirmar que todo funciona.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="seccion seccion-alterna borde-nube" id="garantias">
+        <div class="container">
+          <h2 class="titulo-seccion">Nuestras garantías</h2>
+          <ul class="rejilla-beneficios">
+            <li class="beneficio">
+              <i class="bi bi-database-check icono-beneficio" aria-hidden="true"></i>
+              <h3 class="h5">Sin pérdida de datos</h3>
+              <p>Comprobamos que los datos migrados coinciden con los originales antes del cambio.</p>
+            </li>
+            <li class="beneficio">
+              <i class="bi bi-clock-history icono-beneficio" aria-hidden="true"></i>
+              <h3 class="h5">Sin cortes largos</h3>
+              <p>Planificamos fechas cerradas para que tu actividad diaria no se interrumpa.</p>
+            </li>
+            <li class="beneficio">
+              <i class="bi bi-safe icono-beneficio" aria-hidden="true"></i>
+              <h3 class="h5">Copia antes de cada paso</h3>
+              <p>Cada fase empieza con una copia de seguridad, para poder volver atrás si hace falta.</p>
+            </li>
+            <li class="beneficio">
+              <i class="bi bi-headset icono-beneficio" aria-hidden="true"></i>
+              <h3 class="h5">Soporte tras el cambio</h3>
+              <p>Vigilamos tus sistemas después del lanzamiento y resolvemos cualquier incidencia.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="banda-contacto">
+        <div class="container">
+          <h2>¿Quieres saber qué costaría migrar tus servidores?</h2>
+          <p>Escríbenos y te preparamos una auditoría gratuita de tu infraestructura actual.</p>
+          <a class="btn boton-principal" href="mailto:hola@jagercloud.example?subject=Auditor%C3%ADa%20gratuita%20de%20migraci%C3%B3n%20a%20la%20nube">Escribir a Jäger Cloud</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pie-pagina">
+      <div class="container pie-columnas">
+        <div>
+          <h2 class="h6">Jäger Cloud S.L.</h2>
+          <p>Migraciones a Google Cloud, AWS y Google Workspace para empresas.</p>
+        </div>
+        <div>
+          <h2 class="h6">Dirección</h2>
+          <address>Calle Sierpes 25<br>41004 Sevilla</address>
+        </div>
+        <div>
+          <h2 class="h6">Contacto</h2>
+          <p><a href="mailto:hola@jagercloud.example">hola@jagercloud.example</a></p>
+          <p><a href="tel:+34955000000">+34 955 000 000</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Correo, calendario, archivos y videollamadas conectados a la nube">
+  <circle cx="240" cy="180" r="160" fill="#4285f4" opacity="0.12"/>
+  <path d="M130 240a52 52 0 0 1-5-104 74 74 0 0 1 140-16 64 64 0 0 1 12 120z" fill="#4285f4"/>
+  <rect x="180" y="150" width="90" height="62" rx="8" fill="#ffffff"/>
+  <path d="M184 156l41 32 41-32" stroke="#ea4335" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="60" y="270" width="80" height="60" rx="12" fill="#ea4335"/>
+  <rect x="200" y="285" width="80" height="60" rx="12" fill="#fbbc04"/>
+  <rect x="340" y="270" width="80" height="60" rx="12" fill="#34a853"/>
+  <rect x="78" y="288" width="44" height="8" rx="4" fill="#ffffff"/>
+  <rect x="78" y="304" width="30" height="8" rx="4" fill="#ffffff"/>
+  <path d="M218 305h44M218 321h28" stroke="#202124" stroke-width="8" stroke-linecap="round"/>
+  <path d="M362 292l36 8-36 8z" fill="#ffffff"/>
+  <path d="M100 266l70-40M240 281v-60M380 266l-70-40" stroke="#174ea6" stroke-width="4" stroke-dasharray="8 8" fill="none"/>
+</svg>

@@ -1,0 +1,766 @@
+/* ==========================================================
+   ÍNDICE
+   1. Variables
+   2. Base y tipografía
+   3. Layout general (Grid)
+   4. Componentes (Flexbox, hover, pseudo-elementos)
+   5. Estilo nube y colores Google
+   6. Responsive (mobile-first)
+   ========================================================== */
+
+
+/* ==========================================================
+   1. VARIABLES
+   Centralizadas para cambiar la marca tocando un solo sitio.
+   ========================================================== */
+:root {
+  /* Colores de Google: el azul manda, los demás son detalles */
+  --color-azul: #4285f4;
+  --color-primario: #1a73e8;
+  --color-primario-oscuro: #174ea6;
+  --color-primario-claro: #e8f0fe;
+  --color-acento: #fbbc04;
+  --color-acento-hover: #e0a800;
+  --color-exito: #34a853;
+  --color-error: #ea4335;
+  --color-texto: #202124;
+  --color-texto-suave: #5f6368;
+  --color-fondo-alterno: #f8f9fa;
+  --color-amarillo-icono: #f9ab00;
+  --color-borde: #dadce0;
+  --degradado-google: linear-gradient(90deg, #4285f4 0 25%, #ea4335 25% 50%, #fbbc04 50% 75%, #34a853 75% 100%);
+
+  --fuente-titulos: "Poppins", sans-serif;
+  --fuente-texto: "Roboto", sans-serif;
+
+  --radio-tarjeta: 20px;
+  --sombra-tarjeta: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  /* Sobrescribimos las variables de Bootstrap en vez de tocar su CSS */
+  --bs-primary: #1a73e8;
+  --bs-primary-rgb: 26, 115, 232;
+  --bs-body-color: #202124;
+  --bs-link-color: #1a73e8;
+}
+
+
+/* ==========================================================
+   2. BASE Y TIPOGRAFÍA
+   ========================================================== */
+html {
+  /* Evita que la cabecera fija tape el título al saltar a un ancla */
+  scroll-padding-top: 5rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fuente-texto);
+  color: var(--color-texto);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulos);
+  color: var(--color-primario-oscuro);
+}
+
+.seccion {
+  padding: 3.5rem 0;
+}
+
+.seccion-alterna {
+  background-color: var(--color-fondo-alterno);
+}
+
+/* Línea decorativa bajo los títulos de sección (no es contenido) */
+.titulo-seccion {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  font-size: 1.75rem;
+}
+
+.titulo-seccion::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background-color: var(--color-acento);
+  border-radius: 2px;
+}
+
+
+/* ==========================================================
+   3. LAYOUT GENERAL (CSS GRID)
+   Ningún elemento con .row lleva display: grid: .row ya es flex.
+   ========================================================== */
+
+/* Grid de página: el footer queda abajo aunque haya poco contenido */
+.pagina {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+/* Hero: una columna en móvil, dos en escritorio (ver sección 5) */
+.hero-portada {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  padding: 3rem 1rem;
+  background-color: var(--color-primario-claro);
+}
+
+/* auto-fit evita escribir media queries para esta rejilla */
+.rejilla-beneficios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lista-proceso {
+  display: grid;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: paso;
+}
+
+.pie-columnas {
+  display: grid;
+  gap: 2rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+
+/* ==========================================================
+   4. COMPONENTES
+   ========================================================== */
+
+/* --- Cabecera y menú (Flexbox lo aporta .navbar de Bootstrap) --- */
+.menu-principal {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.logo-marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  color: var(--color-primario);
+}
+
+.menu-principal .enlace-menu {
+  color: var(--color-texto);
+}
+
+.menu-principal .enlace-menu:hover {
+  color: var(--color-primario);
+}
+
+/* --- Botones --- */
+.boton-principal,
+.boton-secundario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: transform 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.boton-principal {
+  color: var(--color-texto);
+  background-color: var(--color-acento);
+  border: 2px solid var(--color-acento);
+}
+
+/* Flecha decorativa: no es contenido, por eso va en ::after */
+.boton-principal::after {
+  content: "→";
+  transition: transform 0.2s;
+}
+
+.boton-principal:hover {
+  color: var(--color-texto);
+  background-color: var(--color-acento-hover);
+  border-color: var(--color-acento-hover);
+}
+
+.boton-principal:hover::after {
+  transform: translateX(4px);
+}
+
+.boton-secundario {
+  color: var(--color-primario);
+  background-color: transparent;
+  border: 2px solid var(--color-primario);
+}
+
+.boton-secundario:hover {
+  color: #ffffff;
+  background-color: var(--color-primario);
+  border-color: var(--color-primario);
+}
+
+/* :active da sensación de "pulsado" */
+.boton-principal:active,
+.boton-secundario:active {
+  transform: scale(0.96);
+}
+
+/* --- Hero --- */
+.hero-texto h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.hero-subtitulo {
+  font-size: 1.1rem;
+  color: var(--color-texto-suave);
+}
+
+.hero-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-imagen {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  justify-self: center;
+}
+
+/* --- Clientes --- */
+.logos-clientes {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.logos-clientes h2 {
+  color: var(--color-texto-suave);
+  font-family: var(--fuente-texto);
+  font-weight: 500;
+}
+
+.lista-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem 3rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.logo-cliente {
+  font-family: var(--fuente-titulos);
+  font-weight: 600;
+  color: var(--color-texto-suave);
+}
+
+/* --- Tarjetas de servicios (la rejilla la pone Bootstrap) --- */
+.tarjeta-servicio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  height: 100%;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-tarjeta);
+  box-shadow: var(--sombra-tarjeta);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.tarjeta-servicio:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(26, 115, 232, 0.25);
+}
+
+.tarjeta-servicio:active {
+  transform: translateY(-2px);
+}
+
+.tarjeta-servicio h3,
+.tarjeta-servicio p {
+  margin: 0;
+}
+
+.tarjeta-servicio p {
+  color: var(--color-texto-suave);
+}
+
+.icono-servicio {
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-primario);
+}
+
+/* --- Pasos del proceso: el número se genera con CSS --- */
+.paso-proceso {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.paso-proceso::before {
+  counter-increment: paso;
+  content: counter(paso);
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: var(--color-primario);
+  border-radius: 50%;
+}
+
+.paso-proceso h3,
+.paso-proceso p {
+  margin: 0 0 0.25rem;
+}
+
+.paso-proceso p {
+  color: var(--color-texto-suave);
+}
+
+/* --- Beneficios --- */
+.beneficio {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.beneficio h3,
+.beneficio p {
+  margin: 0;
+}
+
+.beneficio p {
+  color: var(--color-texto-suave);
+}
+
+.icono-beneficio {
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-exito);
+}
+
+/* --- Testimonios: la comilla es decoración, va en ::before --- */
+.tarjeta-testimonio {
+  position: relative;
+  height: 100%;
+  padding: 3rem 1.5rem 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-tarjeta);
+  box-shadow: var(--sombra-tarjeta);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.tarjeta-testimonio::before {
+  content: "“";
+  position: absolute;
+  top: 0.5rem;
+  left: 1.25rem;
+  font-family: var(--fuente-titulos);
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-acento);
+}
+
+.tarjeta-testimonio:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(26, 115, 232, 0.25);
+}
+
+.tarjeta-testimonio figure {
+  margin: 0;
+}
+
+.tarjeta-testimonio blockquote {
+  margin: 0 0 1rem;
+}
+
+.tarjeta-testimonio figcaption {
+  font-weight: 500;
+  color: var(--color-primario-oscuro);
+}
+
+/* --- Planes --- */
+.tarjeta-plan {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  height: 100%;
+  padding: 1.75rem;
+  background-color: #ffffff;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-tarjeta);
+  box-shadow: var(--sombra-tarjeta);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.tarjeta-plan:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(26, 115, 232, 0.25);
+}
+
+.tarjeta-plan h3,
+.tarjeta-plan p {
+  margin: 0;
+}
+
+.plan-destacado {
+  border: 2px solid var(--color-primario);
+}
+
+.etiqueta-plan {
+  padding: 0.2rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-texto);
+  background-color: var(--color-acento);
+  border-radius: 50px;
+}
+
+.lista-incluye {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lista-incluye li {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.lista-incluye li::before {
+  content: "✓";
+  font-weight: 700;
+  color: var(--color-exito);
+}
+
+/* El botón se pega abajo para que todos queden alineados */
+.tarjeta-plan .btn {
+  margin-top: auto;
+}
+
+/* --- Formulario --- */
+.formulario-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formulario-contacto .campo:focus {
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 0.2rem rgba(26, 115, 232, 0.25);
+}
+
+/* Solo marca error cuando el campo ya tiene texto, no al cargar */
+.formulario-contacto .campo:not(:placeholder-shown):invalid {
+  border-color: var(--color-error);
+}
+
+/* --- Pie de página --- */
+.pie-pagina {
+  color: #ffffff;
+  background-color: var(--color-primario-oscuro);
+}
+
+.pie-pagina h2 {
+  color: #ffffff;
+}
+
+.pie-pagina p,
+.pie-pagina address {
+  margin: 0 0 0.35rem;
+  color: #dbe6fb;
+}
+
+.pie-pagina a {
+  color: #dbe6fb;
+}
+
+.pie-pagina a:hover {
+  color: #ffffff;
+}
+
+
+/* ==========================================================
+   5. ESTILO NUBE Y COLORES GOOGLE
+   Va después de los componentes para sobrescribir sus colores
+   sin necesidad de subir la especificidad.
+   ========================================================== */
+:root {
+  /* Nube dibujada con círculos y una base: sin imágenes extra */
+  --forma-nube:
+    radial-gradient(circle at 30px 45px, #ffffff 22px, transparent 23px),
+    radial-gradient(circle at 72px 30px, #ffffff 28px, transparent 29px),
+    radial-gradient(circle at 118px 38px, #ffffff 24px, transparent 25px),
+    radial-gradient(circle at 152px 48px, #ffffff 18px, transparent 19px),
+    linear-gradient(#ffffff, #ffffff) 20px 45px / 140px 22px no-repeat;
+}
+
+/* --- Cielo del hero con dos nubes decorativas --- */
+.hero-portada {
+  --color-nube: var(--color-primario-claro);
+  position: relative;
+  isolation: isolate;
+  background-image: linear-gradient(180deg, #d2e3fc 0%, var(--color-primario-claro) 100%);
+}
+
+.hero-texto,
+.hero-imagen {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-portada::before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  right: 8%;
+  z-index: 0;
+  width: 180px;
+  height: 70px;
+  background: var(--forma-nube);
+  filter: drop-shadow(0 4px 6px rgba(26, 115, 232, 0.15));
+  opacity: 0.9;
+  /* Único movimiento "por sí solo" de la página: lento y sutil */
+  animation: deriva-nube 20s ease-in-out infinite alternate;
+}
+
+.hero-texto::before {
+  content: "";
+  position: absolute;
+  top: -2.5rem;
+  left: 62%;
+  z-index: -1;
+  width: 180px;
+  height: 70px;
+  background: var(--forma-nube);
+  opacity: 0.7;
+  transform: scale(0.6);
+  transform-origin: top left;
+}
+
+@keyframes deriva-nube {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-40px);
+  }
+}
+
+/* --- Borde de nube: semicírculos que cuelgan de la sección --- */
+.seccion-alterna {
+  --color-nube: var(--color-fondo-alterno);
+}
+
+.borde-nube {
+  position: relative;
+  z-index: 1;
+}
+
+.borde-nube::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -21px;
+  left: 0;
+  height: 22px;
+  background: radial-gradient(circle at 20px 0, var(--color-nube) 21px, transparent 22px) repeat-x;
+  background-size: 40px 22px;
+  pointer-events: none;
+}
+
+/* --- Barra de cuatro colores de Google --- */
+.titulo-seccion::after {
+  width: 80px;
+  background: var(--degradado-google);
+}
+
+.pie-pagina {
+  position: relative;
+}
+
+.pie-pagina::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 6px;
+  background: var(--degradado-google);
+}
+
+/* --- Iconos y números en los cuatro colores, por orden --- */
+.fila-servicios > :nth-child(4n + 1) .icono-servicio,
+.rejilla-beneficios > :nth-child(4n + 1) .icono-beneficio {
+  color: var(--color-primario);
+}
+
+.fila-servicios > :nth-child(4n + 2) .icono-servicio,
+.rejilla-beneficios > :nth-child(4n + 2) .icono-beneficio {
+  color: var(--color-error);
+}
+
+.fila-servicios > :nth-child(4n + 3) .icono-servicio,
+.rejilla-beneficios > :nth-child(4n + 3) .icono-beneficio {
+  color: var(--color-amarillo-icono);
+}
+
+.fila-servicios > :nth-child(4n + 4) .icono-servicio,
+.rejilla-beneficios > :nth-child(4n + 4) .icono-beneficio {
+  color: var(--color-exito);
+}
+
+.lista-proceso .paso-proceso:nth-child(2)::before {
+  background-color: var(--color-error);
+}
+
+/* Texto oscuro sobre el amarillo, nunca blanco (contraste) */
+.lista-proceso .paso-proceso:nth-child(3)::before {
+  color: var(--color-texto);
+  background-color: var(--color-acento);
+}
+
+.lista-proceso .paso-proceso:nth-child(4)::before {
+  background-color: var(--color-exito);
+}
+
+/* --- Elementos de las páginas interiores --- */
+.menu-principal .enlace-menu[aria-current="page"] {
+  font-weight: 500;
+  color: var(--color-primario);
+  box-shadow: inset 0 -3px 0 var(--color-acento);
+}
+
+.enlace-tarjeta {
+  margin-top: auto;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--color-primario);
+}
+
+.enlace-tarjeta::after {
+  content: "→";
+  display: inline-block;
+  margin-left: 0.35rem;
+  transition: transform 0.2s;
+}
+
+.enlace-tarjeta:hover::after {
+  transform: translateX(4px);
+}
+
+.nota-seccion,
+.nota-formulario {
+  margin: 1.5rem 0 0;
+  color: var(--color-texto-suave);
+}
+
+.banda-contacto {
+  padding: 3.5rem 0;
+  text-align: center;
+  color: #ffffff;
+  background-color: var(--color-primario-oscuro);
+}
+
+.banda-contacto h2 {
+  color: #ffffff;
+}
+
+.banda-contacto p {
+  max-width: 40rem;
+  margin: 0 auto 1.5rem;
+}
+
+.acordeon-faq {
+  --bs-accordion-active-bg: var(--color-primario-claro);
+  --bs-accordion-active-color: var(--color-primario-oscuro);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(26, 115, 232, 0.25);
+  --bs-accordion-border-radius: var(--radio-tarjeta);
+  --bs-accordion-inner-border-radius: calc(var(--radio-tarjeta) - 1px);
+}
+
+
+/* ==========================================================
+   6. RESPONSIVE (mobile-first: solo min-width)
+   ========================================================== */
+@media (min-width: 768px) {
+  .hero-portada {
+    grid-template-columns: 1fr 1fr;
+    padding: 5rem 2rem;
+  }
+
+  .hero-texto h1 {
+    font-size: 2.6rem;
+  }
+
+  .lista-proceso {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pie-columnas {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .lista-proceso {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Respeta a quien desactiva las animaciones en su sistema.
+   Se listan las clases en vez de usar * para no necesitar !important. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-portada::before {
+    animation: none;
+  }
+
+  .boton-principal,
+  .boton-principal::after,
+  .boton-secundario,
+  .enlace-tarjeta::after,
+  .tarjeta-servicio,
+  .tarjeta-testimonio,
+  .tarjeta-plan {
+    transition: none;
+  }
+}
